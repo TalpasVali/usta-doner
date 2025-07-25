@@ -1,0 +1,379 @@
+.menu-section {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #f5f0e1 0%, #ffffff 50%, #f5f0e1 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.menu-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.menu-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: #444444;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.menu-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #b4ca27, #8ba019);
+  border-radius: 2px;
+}
+
+.menu-subtitle {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem;
+  color: #666;
+  font-style: italic;
+}
+
+.category-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.category-btn {
+  position: relative;
+  background: transparent;
+  border: 2px solid #b4ca27;
+  color: #b4ca27;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.category-btn.active {
+  background: #b4ca27;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(180, 202, 39, 0.4);
+}
+
+.category-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #b4ca27, transparent);
+  transition: width 0.3s ease;
+}
+
+.category-btn.active .category-underline {
+  width: 100%;
+  animation: underlineGlow 2s ease-in-out infinite;
+}
+
+.category-btn:hover:not(.active) {
+  background: rgba(180, 202, 39, 0.1);
+  transform: translateY(-1px);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.menu-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.menu-card.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fly-from-left {
+  animation: flyFromLeft 0.8s ease-out forwards;
+}
+
+.fly-from-right {
+  animation: flyFromRight 0.8s ease-out forwards;
+}
+
+.menu-card:hover {
+  transform: translateY(-10px) rotate(1deg);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.card-image-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.menu-card:hover .card-image {
+  transform: scale(1.1);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(180, 202, 39, 0.2) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.menu-card:hover .image-overlay {
+  opacity: 1;
+}
+
+.price-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #b4ca27;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(180, 202, 39, 0.4);
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #444444;
+  margin-bottom: 0.5rem;
+}
+
+.card-description {
+  font-family: "Open Sans", sans-serif;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-category {
+  background: rgba(180, 202, 39, 0.1);
+  color: #b4ca27;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+}
+
+.add-to-cart-btn {
+  position: relative;
+  background: #b4ca27;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.btn-glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.add-to-cart-btn:hover .btn-glow {
+  left: 100%;
+}
+
+.add-to-cart-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(180, 202, 39, 0.4);
+}
+
+.card-hover-effect {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(180, 202, 39, 0.1) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.menu-card:hover .card-hover-effect {
+  opacity: 1;
+}
+
+.floating-ingredients {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ingredient {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.3;
+  animation: floatIngredient 8s ease-in-out infinite;
+}
+
+.ingredient-1 {
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.ingredient-2 {
+  top: 30%;
+  right: 8%;
+  animation-delay: -2s;
+}
+
+.ingredient-3 {
+  bottom: 20%;
+  left: 10%;
+  animation-delay: -4s;
+}
+
+.ingredient-4 {
+  bottom: 40%;
+  right: 15%;
+  animation-delay: -6s;
+}
+
+@keyframes flyFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px) rotate(-10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+@keyframes flyFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px) rotate(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+@keyframes underlineGlow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes floatIngredient {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+    opacity: 0.6;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .category-filters {
+    gap: 0.5rem;
+  }
+
+  .category-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .menu-card {
+    margin: 0 1rem;
+  }
+}

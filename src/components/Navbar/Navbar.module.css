@@ -1,0 +1,12 @@
+.navbar {
+  @apply flex justify-center items-center bg-white shadow p-4 fixed w-full z-10;
+}
+.logo {
+  @apply text-2xl font-bold text-amber-600 ml-4;
+}
+.menuList {
+  @apply flex space-x-6 mr-4;
+}
+.menuList a {
+  @apply hover:text-amber-500 transition;
+}
