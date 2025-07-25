@@ -72,7 +72,9 @@ const Hero = () => {
       </div>
 
       <div className="hero-content">
-        <h1 className="hero-title" ref={textRef}></h1>
+        <h1 className="hero-title" ref={textRef}>
+          s
+        </h1>
         <p className="hero-subtitle fade-in-up">
           Gustul autentic al Orientului în inima Timisoarei
         </p>
